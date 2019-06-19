@@ -47,13 +47,13 @@ $ git clone https://github.com/nehaberry/workloads.git
 
 5. Check the run logs in files prefixed with output-* in the current folder
      
-# Workflow for creating Multiple pods(each attached with 1 pvc)
+## Workflow for creating Multiple pods(each attached with 1 pvc)
 
-1. Create a set of mongodb & ycsb pods (syntax:  sh pod-create.sh <mongoPrefix> <StorageClassName> <ycsb-prefix>)
+1. Create a set of mongodb & ycsb pods (syntax: sh pod-create.sh <mongoPrefix> <StorageClassName> <ycsb-prefix>)
     e.g. 
 	$ sh pod-create.sh mongodb csi-rbd ycsb
 
-2. Run  Workload (syntax:  run-io.sh <mongoPrefix>  <ycsbPrefix> <logLocation>)
+2. Run  Workload (syntax:  run-io.sh <mongoPrefix> <ycsbPrefix> <logLocation>)
     e.g.
 	$ sh run-io.sh sh mongodb ycsb ./iter1/
     NB: The workload is run in background using nohup.
@@ -76,7 +76,7 @@ Pre-requisites:
 
 4. Edit the wrapper scripts (pod-create.sh and run-io.sh) as per test requirements.
 
-# Workflow for creating single pod and pvc
+## Workflow for creating single pod and pvc
 
 
 1. Navigate to pgsql folder 
@@ -92,13 +92,13 @@ Pre-requisites:
 
 4. Check the run logs in files prefixed with output-* in the current folder
      
-# Workflow for creating Multiple pods(each attached with 1 pvc)
+## Workflow for creating Multiple pods(each attached with 1 pvc)
 
-1. Create multiple pods (syntax: sh pod-create.sh <pgsqlPrefix> <StorageClassName>
+1. Create multiple pods (syntax: sh pod-create.sh <pgsqlPrefix> <StorageClassName> )
     e.g 
 	$ sh pod-create.sh pgsql csi-rbd 
 
-2. Run  Workload (syntax: run-io.sh <pgsqlPrefix>  <logLocation>
+2. Run  Workload (syntax: run-io.sh <pgsqlPrefix>  <logLocation>)
     e.g 
 	$ sh run-io.sh pgsql ./iter1/
 
