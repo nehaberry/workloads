@@ -1,10 +1,10 @@
-##This README is copied from here - https://github.com/iamniting/ocs/blob/master/pgsql/README.md and gives the overall overview of the process of running PGSQL workload.
+#This README is copied from here - https://github.com/iamniting/ocs/blob/master/pgsql/README.md and gives the overall overview of the process of running PGSQL workload.
 
 ## Configure pgsql pod on openshift container platform using ocs pvc claim
 
 Goto pgsql directory
 ```
-# cd ocs/pgsql
+# cd ./pgsql
 ```
 
 ## Configuring and running workload using scripts
@@ -18,19 +18,19 @@ storageClass -> Name of the storageclass
 
 Run the following command to deploy pgsql
 ```
-# sh deploy-pgsql.sh
+# sh deploy-pgsql.sh <pgsqlDC name> <StoraClass>
 ```
 
 Run the following command to start workload on the pgsql pod (make sure to have right parameters for pgsqlDC, & namespace)
 ```
-# sh run-workload-pgsql.sh
+# sh run-workload-pgsql.sh <pgsqlDC name>
 ```
 
 ## Below steps explains the manual procedure about deploying and running workloads on pgsql pods
 
 Create new-app from the template
 ```
-# oc new-app pgsql.yaml -p DATABASE_SERVICE_NAME=postgresql -p MEMORY_LIMIT=1Gi -p VOLUME_CAPACITY=10Gi -p STORAGE_CLASS=glusterfs-storage
+# oc new-app pgsql4x.yaml -p DATABASE_SERVICE_NAME=postgresql -p MEMORY_LIMIT=1Gi -p VOLUME_CAPACITY=10Gi -p STORAGE_CLASS=glusterfs-storage
 ```
 
 Verify that pod is up and running
