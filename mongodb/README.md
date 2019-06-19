@@ -4,7 +4,7 @@
 
 Goto mongodb directory
 ```
-# cd ocs/mongodb
+# cd mongodb
 ```
 
 ## Configuring and running workload using scripts
