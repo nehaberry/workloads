@@ -1,10 +1,11 @@
-# workloads
+# Workloads
 
 Running MongoDB and PGSQL on OCP 4.x
 
 The key objective is to document detailed steps to bring up Mongodb and PGSQL pods in an  OCS 4.x environment. 
 
-NB: 
+NB:
+ 
 1. The scripts are taken from https://github.com/iamniting/ocs.git
 
 2. Currently, the PVC Access Mode = RWO for both the workloads. Need to change the Access Mode for PGSQL once RAW Block volume support is introduced.
@@ -18,12 +19,12 @@ NB:
 #Pre-requisites 
 
 1. Clone the github repo 
-$ git clone https://github.com/nehaberry/workloads.git
+	$ git clone https://github.com/nehaberry/workloads.git
 
 2. Edit the deploy-mongodb.sh to change volumeCapacity and memoryLimit as per test requirement.
 
 3. Edit the run-workload-mongodb.sh to change following params based on test requirement:
-    threads, recordCount, operationCount, iterations
+    	threads, recordCount, operationCount, iterations
 
 4. Edit the wrapper scripts (pod-create.sh and run-io.sh) as per test requirements.
 
