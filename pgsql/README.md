@@ -1,4 +1,4 @@
-#This README is copied from here - https://github.com/iamniting/ocs/blob/master/pgsql/README.md and gives the overall overview of the process of running PGSQL workload.
+#This README is copied from https://github.com/iamniting/ocs/blob/master/pgsql/README.md and gives the overall overview of the process of running PGSQL workload.
 
 ## Configure pgsql pod on openshift container platform using ocs pvc claim
 
