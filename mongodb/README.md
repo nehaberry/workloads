@@ -1,4 +1,4 @@
-##This README is copied from here -https://github.com/iamniting/ocs/blob/master/mongodb/README.md and gives the complete overview of the process of running mongodb workload.
+# This README is copied from here -https://github.com/iamniting/ocs/blob/master/mongodb/README.md and gives the complete overview of the process of running mongodb workload.
 
 ## Configure mongodb pod on openshift container platform using ocs pvc claim
 
