@@ -34,29 +34,29 @@ NB:
     *`$ cd ./mongodb`
 
 2. Create Mongodb pod (sh deploy-mongodb.sh <name of pod/namespace> <Storageclass Name>
-    * ` e.g 
-	$ sh deploy-mongodb.sh mongodb-1 csi-rbd`
+    ``` e.g 
+	$ sh deploy-mongodb.sh mongodb-1 csi-rbd```
 
 
 3. Create the ycsb pod (syntax:  sh ycsb.sh <name> <namespace>)
-    *`e.g.`
-	* `$ sh ycsb.sh ycsb-1 mongodb-1`
+    ```e.g.
+	$ sh ycsb.sh ycsb-1 mongodb-1```
       
 4. Start the Workload (syntax: sh run-workload-mongodb.sh <mongodbDC> <ycsbDC>)
-    * `e.g.` 
-	* `$ sh run-workload-mongodb.sh mongodb-1 ycsb-1`
+    ```e.g.
+	$ sh run-workload-mongodb.sh mongodb-1 ycsb-1```
 
 5. Check the run logs in files prefixed with output-* in the current folder
      
 ## Workflow for creating Multiple pods(each attached with 1 pvc)
 
 1. Create a set of mongodb & ycsb pods (syntax: sh pod-create.sh <mongoPrefix> <StorageClassName> <ycsb-prefix>)
-    * `e.g.`
-	* `$ sh pod-create.sh mongodb csi-rbd ycsb`
+    ```e.g.
+	$ sh pod-create.sh mongodb csi-rbd ycsb```
 
 2. Run  Workload (syntax:  run-io.sh <mongoPrefix> <ycsbPrefix> <logLocation>)
-   * `e.g.
-	* `$ sh run-io.sh sh mongodb ycsb ./iter1/`
+   ```e.g.
+	$ sh run-io.sh sh mongodb ycsb ./iter1/```
     NB: The workload is run in background using nohup.
 
 4. Check IO
@@ -81,27 +81,27 @@ Pre-requisites:
 
 
 1. Navigate to pgsql folder 
-	  * `$ cd ./pgsql`
+	* `$ cd ./pgsql`
 
 2. Create PGSQL pod (syntax: sh deploy-pgsql.sh <name> <Storageclass> )
-    * `e.g.` 
-	* `$ sh deploy-pgsql.sh pgsql-1 csi-rbd`
+    ```e.g. 
+	$ sh deploy-pgsql.sh pgsql-1 csi-rbd```
       
 3. Run Workload (syntax:  sh run-workload-pgsql.sh <pgsqlDC> )
-    * `e.g.` 
-    * `$ sh run-workload-pgsql.sh pgsql-1`
+    ```e.g. 
+       $ sh run-workload-pgsql.sh pgsql-1```
 
 4. Check the run logs in files prefixed with output-* in the current folder
      
 ## Workflow for creating Multiple pods(each attached with 1 pvc)
 
 1. Create multiple pods (syntax: sh pod-create.sh <pgsqlPrefix> <StorageClassName> )
-    e.g 
-	* `$ sh pod-create.sh pgsql csi-rbd`
+    ```e.g 
+	$ sh pod-create.sh pgsql csi-rbd```
 
 2. Run  Workload (syntax: run-io.sh <pgsqlPrefix>  <logLocation>)
-    e.g 
-	* `$ sh run-io.sh pgsql ./iter1/`
+    ```e.g 
+	$ sh run-io.sh pgsql ./iter1/```
 
 3. Check IO
     Navigate to the LogLocation folder and check the logs.
